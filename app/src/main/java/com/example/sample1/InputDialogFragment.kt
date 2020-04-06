@@ -8,7 +8,6 @@ import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.dialog_input.view.*
 
@@ -23,7 +22,7 @@ class InputDialogFragment: DialogFragment() {
             .setPositiveButton(R.string.resister) { _, _ ->
                 Log.d("MY_LOG", "PUSHED REGISTER BUTTON")
                 val step = view.editStep.text.toString()
-                viewModel.inputStepCount.value = step.toInt()
+                viewModel.addStepCount(step.toInt())
             }
         return builder.create()
     }
